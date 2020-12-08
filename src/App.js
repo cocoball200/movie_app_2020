@@ -1,37 +1,30 @@
 import React from 'react';
-import ProTypes from 'prop-types';
 
-function Mama({ name, picture }) {
+const singersList = [
+  { id: 1, name: 'Boa', img: 'https://res.heraldm.com/content/image/2018/01/26/20180126000818_0.jpg' },
+  { id: 2, name: 'Taemin', img: 'https://koreajoongangdaily.joins.com/data/photo/2020/09/07/2b2a0e5b-924a-4137-ae75-5d859a11f00a.jpg' },
+  { id: 3, name: 'BTS', img: 'https://blog.kakaocdn.net/dn/b71v0O/btqEw3k68Hw/5kmSi0lE9zzOFaO9WN7K41/img.jpg' },
+  { id: 4, name: 'KATTY PERRY', img: 'https://www.rollingstone.com/wp-content/uploads/2020/05/KatyPerry.jpg?resize=1800,1200&w=1800' },
+  { id: 5, name: 'SIA', img: 'https://blog.kakaocdn.net/dn/k09It/btqB9ymZNZR/6dXnwW6cksaanlw0ZvrAXK/img.jpg' }
+]
+
+function Singers({ name, img }) {
   return (
     <div>
-      <h2> Comming Soon {name}</h2>
-      <img src={picture} alt={name} />
+      <h1> 이번 페스티벌에 나올 사람은 {name}입니다</h1>
+      <img src={img} alt={name} />
     </div>
   );
 }
-
-const singers = [
-  {
-    name: 'BoA',
-    image: 'https://dimg.donga.com/wps/NEWS/IMAGE/2019/09/16/97419640.2.jpg'
-  },
-  {
-    name: 'BTS',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/%E2%80%98LG_Q7_BTS_%EC%97%90%EB%94%94%EC%85%98%E2%80%99_%EC%98%88%EC%95%BD_%ED%8C%90%EB%A7%A4_%EC%8B%9C%EC%9E%91_%2842773472410%29_%28cropped%29.jpg'
-  },
-  {
-    name: 'TAEMIN',
-    image: 'https://koreajoongangdaily.joins.com/data/photo/2020/08/05/50212021-335a-4197-88f5-59c2c128dba7.jpg'
-  }
-];
 
 function App() {
   return (
     <div>
-      {singers.map(singer => (
-        <Mama name={singer.name} picture={singer.image} />
+      {singersList.map(item => (
+        <Singers id={item.id} name={item.name} img={item.img} />
       ))}
     </div>
-  );
+  )
 }
+
 export default App;
